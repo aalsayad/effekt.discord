@@ -110,7 +110,7 @@ function emailToSafeBase64(email) {
     .replace(/=+$/, ""); // Remove any padding characters (=)
 }
 
-app.get("/invite", async (req, res) => {
+app.post("/invite", async (req, res) => {
   const { email } = req.body;
 
   if (!email) {
