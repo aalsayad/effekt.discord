@@ -101,7 +101,7 @@ app.get('/invite', async (req, res) => {
         unique: true,
       });
 
-      res.send(`Invite link: ${invite.url}`);
+      res.send(invite.url);
       await fetchAndUpdateInvites();
     } catch (error) {
       console.error('Error creating invite:', error);
