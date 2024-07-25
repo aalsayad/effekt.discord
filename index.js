@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 
 const app = express();
@@ -88,6 +89,7 @@ client.on('guildMemberAdd', async (member) => {
   }
 });
 
+app.use(cors()); // Enable CORS for all routes
 app.use(express.json());
 
 app.get('/invite', async (req, res) => {
